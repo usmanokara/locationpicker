@@ -229,7 +229,7 @@ class PlacePickerState extends State<PlacePicker> {
           "https://maps.googleapis.com/maps/api/place/autocomplete/json?"
           "key=${widget.apiKey}&"
           "language=${widget.localizationItem.languageCode}&"
-          "input={$place}&sessiontoken=${this.sessionToken}";
+          "input={$place}&sessiontoken=${this.sessionToken}&region=${widget.localizationItem.region}";
 
       if (this.locationResult != null) {
         endpoint += "&location=${this.locationResult.latLng.latitude}," +
@@ -290,7 +290,7 @@ class PlacePickerState extends State<PlacePicker> {
       final url = Uri.parse(
           "https://maps.googleapis.com/maps/api/place/details/json?key=${widget.apiKey}&" +
               "language=${widget.localizationItem.languageCode}&" +
-              "placeid=$placeId");
+              "placeid=$placeId&region=${widget.localizationItem.region}");
 
       final response = await http.get(url);
 

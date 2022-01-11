@@ -229,7 +229,7 @@ class PlacePickerState extends State<PlacePicker> {
           "https://maps.googleapis.com/maps/api/place/autocomplete/json?"
           "key=${widget.apiKey}&"
           "language=${widget.localizationItem.languageCode}&"
-          "input={$place}&sessiontoken=${this.sessionToken}&region=${widget.localizationItem.region}";
+          "input={$place}&sessiontoken=${this.sessionToken}&components=${widget.localizationItem.region}";
 
       if (this.locationResult != null) {
         endpoint += "&location=${this.locationResult.latLng.latitude}," +
@@ -290,7 +290,7 @@ class PlacePickerState extends State<PlacePicker> {
       final url = Uri.parse(
           "https://maps.googleapis.com/maps/api/place/details/json?key=${widget.apiKey}&" +
               "language=${widget.localizationItem.languageCode}&" +
-              "placeid=$placeId&region=${widget.localizationItem.region}");
+              "placeid=$placeId&components=${widget.localizationItem.region}");
 
       final response = await http.get(url);
 
@@ -369,7 +369,7 @@ class PlacePickerState extends State<PlacePicker> {
       final url = Uri.parse(
           "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
           "key=${widget.apiKey}&location=${latLng.latitude},${latLng.longitude}"
-          "&radius=150&language=${widget.localizationItem.languageCode}&region=${widget.localizationItem.region}");
+          "&radius=150&language=${widget.localizationItem.languageCode}&components=${widget.localizationItem.region}");
 
       final response = await http.get(url);
 
@@ -413,7 +413,7 @@ class PlacePickerState extends State<PlacePicker> {
           "latlng=${latLng.latitude},${latLng.longitude}&"
           "language=${widget.localizationItem.languageCode}&"
           "key=${widget.apiKey}&"
-          "region=${widget.localizationItem.region}");
+          "components=${widget.localizationItem.region}");
 
       final response = await http.get(url);
 

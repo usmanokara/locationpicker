@@ -369,7 +369,7 @@ class PlacePickerState extends State<PlacePicker> {
       final url = Uri.parse(
           "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
           "key=${widget.apiKey}&location=${latLng.latitude},${latLng.longitude}"
-          "&radius=150&language=${widget.localizationItem.languageCode}");
+          "&radius=150&language=${widget.localizationItem.languageCode}&region=${widget.localizationItem.region}");
 
       final response = await http.get(url);
 

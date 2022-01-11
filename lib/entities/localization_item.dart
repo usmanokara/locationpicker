@@ -5,14 +5,14 @@ class LocalizationItem {
   String noResultsFound;
   String unnamedLocation;
   String tapToSelectLocation;
+  String region;
 
-
-  LocalizationItem({
-    this.languageCode = 'en_us',
-    this.nearBy = 'Nearby Places',
-    this.findingPlace = 'Finding place...',
-    this.noResultsFound = 'No results found',
-    this.unnamedLocation = 'Unnamed location',
-    this.tapToSelectLocation = 'Tap to select this location',
-  });
+  LocalizationItem(
+      {this.languageCode = 'en_us',
+      this.nearBy = 'Nearby Places',
+      this.findingPlace = 'Finding place...',
+      this.noResultsFound = 'No results found',
+      this.unnamedLocation = 'Unnamed location',
+      this.tapToSelectLocation = 'Tap to select this location',
+      this.region = ''});
 }

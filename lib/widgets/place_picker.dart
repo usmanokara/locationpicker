@@ -412,7 +412,8 @@ class PlacePickerState extends State<PlacePicker> {
       final url = Uri.parse("https://maps.googleapis.com/maps/api/geocode/json?"
           "latlng=${latLng.latitude},${latLng.longitude}&"
           "language=${widget.localizationItem.languageCode}&"
-          "key=${widget.apiKey}");
+          "key=${widget.apiKey}&"
+          "region=${widget.localizationItem.region}");
 
       final response = await http.get(url);
 

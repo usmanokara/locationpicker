@@ -290,7 +290,7 @@ class PlacePickerState extends State<PlacePicker> {
       final url = Uri.parse(
           "https://maps.googleapis.com/maps/api/place/details/json?key=${widget.apiKey}&" +
               "language=${widget.localizationItem.languageCode}&" +
-              "placeid=$placeId&components=${widget.localizationItem.region}");
+              "placeid=$placeId");
 
       final response = await http.get(url);
 
@@ -369,7 +369,7 @@ class PlacePickerState extends State<PlacePicker> {
       final url = Uri.parse(
           "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
           "key=${widget.apiKey}&location=${latLng.latitude},${latLng.longitude}"
-          "&radius=150&language=${widget.localizationItem.languageCode}&components=${widget.localizationItem.region}");
+          "&radius=150&language=${widget.localizationItem.languageCode}");
 
       final response = await http.get(url);
 
@@ -412,8 +412,7 @@ class PlacePickerState extends State<PlacePicker> {
       final url = Uri.parse("https://maps.googleapis.com/maps/api/geocode/json?"
           "latlng=${latLng.latitude},${latLng.longitude}&"
           "language=${widget.localizationItem.languageCode}&"
-          "key=${widget.apiKey}&"
-          "components=${widget.localizationItem.region}");
+          "key=${widget.apiKey}");
 
       final response = await http.get(url);
 
